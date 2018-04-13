@@ -24,9 +24,12 @@ public class Time {
         return timeUnit.convert(diffInMS, TimeUnit.MILLISECONDS);
     }
 
+    public static void timeCost(long start) {
+        System.out.println("used:" + TimeUnit.NANOSECONDS.toMillis(System.nanoTime() - start) + " ms");
+    }
+
     /**
      * 获取本机的Unix时间
-     *
      */
     public static long getUnixTime() {
         return Instant.now().getEpochSecond();
