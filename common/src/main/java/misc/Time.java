@@ -1,4 +1,4 @@
-package string;
+package misc;
 
 import java.time.Instant;
 import java.util.Date;
