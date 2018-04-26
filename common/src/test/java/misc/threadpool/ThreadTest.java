@@ -6,12 +6,13 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.TimeUnit;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
  * Created by cznno
  * Date: 18-4-24
  */
-public class ThreadTest {
+class ThreadTest {
     static final Runnable R1 = () -> {
         for (int i = 0; i < 5; i++) {
             System.out.println(Thread.currentThread().getName() + " is running " + "output: " + i);
@@ -30,6 +31,6 @@ public class ThreadTest {
         tp.submit(cb);
 
         assertEquals(tp.get(1, TimeUnit.SECONDS), 2);
-        assertEquals(tp.terminate(), true);
+        assertTrue(tp.terminate());
     }
 }
