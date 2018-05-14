@@ -47,7 +47,10 @@ public class Time {
     /**
      * 获取时区
      * @see <a href="https://coderanch.com/t/386398/java/System-Timezone">
-     *     How to get System Timezone?</a>
+     *     How to get System Timezone?</a><br>
+     *       <pre>在使用{@link java.text.SimpleDateFormat}的时候注意当前时区的设置,
+     *       可以使用{@link java.text.SimpleDateFormat#setTimeZone(TimeZone)}设置时区
+     *       </pre>
      */
     public static void getTimezone(){
         TimeZone tz = Calendar.getInstance().getTimeZone();
