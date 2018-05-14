@@ -1,7 +1,9 @@
 package misc;
 
 import java.time.Instant;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.TimeZone;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -40,5 +42,16 @@ public class Time {
         Date now = new Date();
         long unixTime = now.getTime() / 1000L;
         */
+    }
+
+    /**
+     * 获取时区
+     * @see <a href="https://coderanch.com/t/386398/java/System-Timezone">
+     *     How to get System Timezone?</a>
+     */
+    public static void getTimezone(){
+        TimeZone tz = Calendar.getInstance().getTimeZone();
+        System.out.println(tz.getDisplayName());
+        System.out.println(tz.getID());
     }
 }
